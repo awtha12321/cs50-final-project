@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+
+
+    <div class="profile">
+
+        <div class="profile2">
+
+            <div class="_profile">
+                <div class="profile_img">
+                    <img id="imgPreview" alt="profile" src="">
+                </div>
+                <label for="myFileInput" class="custom-file-upload">
+                    Upload Profile
+                </label>
+                <input type="file" id="myFileInput" class="profile_input searchInput">
+
+            </div>
+
+            <div class="profile_detail">
+
+                <p class="profile_name">{{ name }}</p>
+                <p class="profile_email">{{ email }}</p>
+
+            </div>
+
+            <div class="title-profile">
+
+                <h1>AYT</h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        document.querySelector("#myFileInput").addEventListener('change', function () {
+
+            const reader = new FileReader();
+            const image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDgkPQavzX7KwcLzeAsf0fgOx_-D51F3fag&usqp=CAU";
+
+            reader.addEventListener("load", () => {
+
+               localStorage.setItem("recent-image", reader.result);
+
+              const imgURL = localStorage.getItem("recent-image");
+
+              if (imgURL) {
+                  document.querySelector("#imgPreview").setAttribute("src", imgURL);
+              }
+              else {
+                  document.querySelector("#imgPreview").setAttribute("src", image);
+              }
+
+            });
+
+            reader.readAsDataURL(this.files[0]);
+
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const imgURL = localStorage.getItem("recent-image");
+            const image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDgkPQavzX7KwcLzeAsf0fgOx_-D51F3fag&usqp=CAU";
+
+            if (imgURL) {
+              document.querySelector("#imgPreview").setAttribute("src", imgURL);
+            }
+            else {
+                  document.querySelector("#imgPreview").setAttribute("src", image);
+            }
+
+        });
+
+    </script>
+
+{% endblock %}

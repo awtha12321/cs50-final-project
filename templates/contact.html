@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block main %}
+
+    {% if sent == true %}
+
+        <h1 class="sent">Email is sent!</h1>
+
+    {% endif %}
+
+    <div class="contact">
+
+        <form action="/contact_us" method="post" >
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name" name=name required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message" require></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-danger">submit</button>
+
+        </form>
+
+    </div>
+
+{% endblock %}

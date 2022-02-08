@@ -1,0 +1,112 @@
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    width: 100%;
+    color: white;
+    /*background-image: url("https://wallpaperaccess.com/full/201322.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+}
+
+.profile2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+._profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.profile_img {
+    border: 3px solid white;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.profile_img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.profile_detail {
+    text-align: center;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.custom-file-upload:hover {
+    transition: .5s;
+    background: #FFFFFF;
+    color: black;
+    border: 1px solid black;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.title-profile {
+    color: #FF0035;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 20px;
+
+}
+
+.contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.contact form {
+    width: 50%;
+}
+
+.sent {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+@media only screen and (min-width: 650px) {
+
+    .profile2 {
+        background-color: rgba(9, 10, 10, 0.5);
+        padding-top: 60px;
+        padding-bottom: 30px;
+        border-radius: 10px;
+    }
+
+    .profile_name,
+    .profile_email {
+        font-size: 20px;
+    }
+
+    .profile_img img {
+        width: 300px;
+        height: 300px;
+    }
+
+}

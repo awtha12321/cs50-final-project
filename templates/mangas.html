@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Mangas
+{% endblock %}
+
+{% block content %}
+
+    <form class="search-box" action="/searched_manga" method="post">
+        <input type="search" placeholder="search..." class="searchInput se" name="name" required>
+        <input type="submit" value="Go" class="searchInput go">
+    </form>
+
+{% endblock %}
+
+
+{% block main %}
+
+    <div class="btn-group dropright genres top">
+      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        genres
+      </button>
+      <div class="dropdown-menu">
+        <form action="/animes" method="post">
+            {% for i in range(genres|length) %}
+                <div class="single-genre">
+                    <input type="submit" name="genres" value="{{ genres[i] }}" class="_single-genre searchInput">
+                </div>
+            {% endfor %}
+        </form>
+      </div>
+    </div>
+
+    {% if total != 0 %}
+
+        <div class="animes-container">
+
+            <div class="animes">
+
+                {% for i in range(info.coverImage|length) %}
+
+                    <form class="anime" id="anime" action="/manga-info" method="post">
+
+                        <div class="coverImage" id="coverImage" style="background-image: url( {{info.coverImage[i]}} );"></div>
+                        {% if info.Etitle[i] is not none %}
+                            <input type="submit" value="{{info.Etitle[i]}}" class="anime-submit searchInput" id="anime-submit" title="{{info.Etitle[i]}}" name="name">
+                        {% else %}
+                            <input type="submit" value="{{info.Rtitle[i]}}" class="anime-submit searchInput" id="anime-submit" title="{{info.Rtitle[i]}}" name="name">
+                        {% endif %}
+
+                    </form>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="Genres" id ="genres">
+
+                <h1 class="genres_title">Genres</h1>
+
+                <form class="_genres" action="/animes" method="post">
+
+                    {% for i in range(genres|length) %}
+                        <div class="single-genre">
+                            <input type="submit" name="genres" value="{{ genres[i] }}" class="_single-genre searchInput">
+                        </div>
+                    {% endfor %}
+
+                </form>
+
+            </div>
+
+    {% else %}
+
+        <div class="loss">
+            <p class="loss-data">There is no manga like {{ name }}</p>
+        </div>
+
+    {% endif %}
+
+    </div>
+
+    <div class="bottom">
+        <a class="skip _bottom" id="bottom" href="#top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <script>
+
+        const x = document.getElementsByClassName("anime-submit");
+        const z = document.getElementsByClassName("coverImage");
+        const icon = document.querySelector('#icon');
+
+        icon.addEventListener('click', () => {
+
+           for (let i=0; i < x.length; i++) {
+
+                z[i].classList.toggle('hide-cover');
+                x[i].classList.toggle('hide');
+
+           }
+
+        });
+
+    </script>
+
+{% endblock %}

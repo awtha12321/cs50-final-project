@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="/static/login_register.css">
+    <title>AYT</title>
+</head>
+<body>
+
+    <div class="dark-bg login-main">
+
+        <div class="white login-form register-slide">
+
+          <h1>Register!</h1>
+
+          <form action="/register" class="_login-form" method="post" required>
+            <input type="text" id ="name" name="name" class="name" placeholder="Name:" autofocus required><br>
+            <input type="email" id="email" name="email" class="email" placeholder="Email:" required><br>
+            <input type="password" id="pass" name="pass" autocomplete="off" placeholder="password:" required><br>
+            <input type="password" id="pass1" name="pass2" autocomplete="off" placeholder="password (again):" required><br>
+            <input type="submit" value="Submit" class="submit" id="submit">
+          </form>
+
+        </div>
+
+        <div class="blue slide-images register-slide">
+
+            <h1>AYT</h1>
+
+            <p>Login if you already have an account!</p>
+
+            <div class="img-slide">
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/61tIHDmI4cL._SL1500_.jpg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://wallpaperaccess.com/full/341369.jpg" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://wallpaperaccess.com/full/3231246.png" alt="Third slide">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="register-btn">
+
+              <form action="/login" method="get" class="reminder-login">
+                <input type="submit" value="login" class="submit">
+              </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/static/register.js"></script>
+
+</body>
+</html>

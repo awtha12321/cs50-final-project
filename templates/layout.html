@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle&family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="/static/nav_footer.css">
+    <link rel="stylesheet" href="/static/animes.css">
+    <link rel="stylesheet" href="/static/profile_contact.css">
+    <link rel="stylesheet" href="/static/anime-manga-info.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+    <nav>
+
+        <a class="logo" href="/animes">
+            <img src="https://www.freepnglogos.com/uploads/a-logo-5.png" width="50" height="50" alt="black bird logo">
+        </a>
+
+        <ul>
+            <li><a class="active" href="/animes">Animes</a></li>
+            <li><a href="/mangas">Mangas</a></li>
+            <li><a href="/contact_us">Contact us</a></li>
+
+            <li>
+                <div class="dropdown show">
+                  <a class="btn dropdown-toggle drop-color except" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Setting
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item except" href="/profile">Profile</a>
+                    <a class="dropdown-item except" href="/logout">Logout</a>
+                  </div>
+                </div>
+            </li>
+            <li class="search-bar">
+                {% block content %}{% endblock %}
+            </li>
+        </ul>
+
+        <label id="icon">
+            <i class="fas fa-bars"></i>
+        </label>
+
+    </nav>
+
+    {% block main %}{% endblock %}
+
+    <footer>
+
+        <div class="footer_container">
+
+            <ul class="footer-ul">
+                <li><a href="/contact_us">Contact us</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+
+        </div>
+
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+           $('#icon').click(function() {
+                $('ul').toggleClass('show');
+           });
+        });
+    </script>
+
+</body>
+</html>

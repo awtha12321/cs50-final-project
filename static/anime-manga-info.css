@@ -1,0 +1,146 @@
+.anime-info-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 10px;
+}
+
+.bannerImage {
+    width: 100%;
+    height: 300px;
+    background-position: 50% 35%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.coverImage-title {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    top: -50px;
+}
+
+.__coverImage {
+    width: 130px;
+    height: 170px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+._title {
+    margin-left: 50px;
+    color: #FF0035;
+}
+
+.info {
+    display: flex;
+    color: #FF0035;
+}
+
+._info div,
+._info p {
+    margin: 0;
+}
+
+._info div {
+    margin-bottom: 10px;
+}
+
+._info {
+    width: 30%;
+    margin-left: 20px;
+}
+
+.des {
+    text-align: left;
+    width: 65%;
+    font-size: 9px;
+}
+
+.anime-chars {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    color: #FF0035;
+}
+
+._characters {
+    display: flex;
+    width: auto;
+    margin-left: 20px;
+}
+
+.char_img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.name_role {
+    margin-left: 15px;
+}
+
+@media only screen and (min-width: 650px) {
+
+    ._title {
+        font-size: 15px;
+    }
+
+    ._info {
+        font-size: 12px;
+    }
+
+    .des {
+        font-size: 14px;
+    }
+
+    .coverImage-title {
+        padding-left: 35px;
+    }
+
+    ._info {
+        margin-left: 35px;
+    }
+
+    .char_img img {
+        width: 70px;
+        height: 80px;
+    }
+
+
+}
+
+@media only screen and (min-width: 740px) {
+
+    .anime-chars {
+            grid-column-gap: 40px;
+            grid-template-columns: auto auto auto;
+        }
+
+}
+
+@media only screen and (min-width: 1250px) {
+
+    .anime-chars {
+        grid-column-gap: 50px;
+        grid-template-columns: auto auto auto auto auto;
+    }
+
+}
+
+@media only screen and (min-width: 1400px) {
+
+    .anime-chars {
+        grid-column-gap: 50px;
+        grid-template-columns:auto auto auto auto auto auto;
+    }
+
+}

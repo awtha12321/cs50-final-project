@@ -1,0 +1,202 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Manga information
+{% endblock %}
+
+{% block content %}
+
+    <form class="search-box" action="/searched_manga" method="post">
+        <input type="search" placeholder="search..." class="searchInput se" name="name" required>
+        <input type="submit" value="Go" class="searchInput go">
+    </form>
+
+{% endblock %}
+
+
+{% block main %}
+
+    <div class="anime-info-container">
+
+        {% if infor.bannerImage is not none %}
+            <div class="bannerImage" style="background-image: url( {{infor.bannerImage}} );"></div>
+        {% else %}
+            <div class="bannerImage" style="background-color: #e9f5ec;"></div>
+        {% endif %}
+
+        <div class="coverImage-title">
+
+
+            <div class="__coverImage" style="background-image: url( {{infor.coverImage}} );"></div>
+
+
+            <div class="_title">
+
+                {% if infor.Etitle is not none %}
+
+                    <p>{{ infor.Etitle }}</p>
+
+                {% else %}
+
+                    <p>{{ infor.Rtitle }}</p>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div class="anime-overall">
+
+            <div class="info">
+
+                <div class="_info">
+
+                    {% if infor.chapter %}
+                        <div class="chapter">
+                            <p class="anime_head">chapters</p>
+                            <p>{{ infor.chapter }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if infor.volume is not none %}
+                        <div class="volume">
+                            <p class="anime_head">volume</p>
+                            <p>{{ infor.volume }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if infor.status is not none %}
+                        <div class="status">
+                            <p class="anime_head">status</p>
+                            <p>{{ infor.status }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if infor.popular is not none %}
+                        <div class="popular">
+                            <p class="anime_head">popularity</p>
+                            <p>{{ infor.popular }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if infor.season is not none %}
+                        <div class="season">
+                            <p class="anime_head">season</p>
+                            <p>{{ infor.season }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if infor.genres is not none %}
+                        <div class="genres">
+                            <p class="anime_head">genres</p>
+                            {% for y in range(infor.genres | length) %}
+                                <p class="_genres">
+                                    {{ infor.genres[y] }}
+                                </p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if infor.average is not none %}
+                        <div class="score">
+                            <p class="anime_head">Average Score</p>
+                            <p>{{ infor.average }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if infor.rating is not none %}
+                        <div class="rating">
+                            <p class="anime_head">rating</p>
+                            <p>{{ infor.rating }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if infor.Etitle is not none %}
+                        <div class="anime_t">
+                            <p class="anime_head">English</p>
+                            <p>{{ infor.Etitle }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if infor.Rtitle is not none %}
+                        <div class="anime_t">
+                            <p class="anime_head">Romaji</p>
+                            <p>{{ infor.Rtitle }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if infor.native is not none %}
+                        <div class="anime_t">
+                            <p class="anime_head">Native</p>
+                            <p>{{ infor.native }}</p>
+                        </div>
+                    {% endif %}
+
+                </div>
+
+                {% if infor.des is not none %}
+                    <div class="des">
+                        <p>{{ infor.des|safe }}</p>
+                    </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div class="anime-chars">
+
+              {% for i in range(infor.char_img|length) %}
+                <div class="_characters">
+                    {% if infor.char_img[i] is not none %}
+                        <div class="char_img">
+                            <img src=" {{ infor.char_img[i] }}" alt="character image">
+                        </div>
+                    {% endif %}
+                    <div class="name_role">
+                        {% if infor.name[i] is not none %}
+                            <div class="name">
+                                <p>{{ infor.name[i] }}</p>
+                            </div>
+                        {% endif %}
+
+                        {% if infor.role[i] is not none %}
+                            <div class="role">
+                                <p>{{ infor.role[i] }}</p>
+                            </div>
+                        {% endif %}
+
+                        {% if infor.age[i] is not none %}
+                            <div class="age">
+                                <p>age: {{ infor.age[i] }}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const z = document.getElementsByClassName("__coverImage");
+        const x = document.getElementsByClassName("_title");
+        const icon = document.querySelector('#icon');
+
+        icon.addEventListener('click', () => {
+
+           for (let i=0; i < z.length; i++) {
+
+                z[i].classList.toggle('hide-cover');
+                x[i].classList.toggle('for_title');
+
+           }
+
+        });
+
+    </script>
+
+{% endblock %}
