@@ -52,7 +52,7 @@ I have quite a few pages in this web app.
 # Requirments
 
 - You will need everything that is listed in requirements.
-- You need to type **flask run** to run this project
+- You need to type **flask run** in terminal to run this project
 
 <br>
 
