@@ -23,9 +23,9 @@ You can also find them on google.
 
 # Pages/Templates
 
-I have quite a few pages in this webapp.
+I have quite a few pages in this web app.
 
-- detail information 2 templates about Anime and Manga
+- 2 templates for detail information about Anime and Manga
 - overall 2 pages that shows Animes and Mangas
 - apology
 - login
