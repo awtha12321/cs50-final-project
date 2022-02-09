@@ -3,10 +3,6 @@ CS50 final project!
 
 <br>
 
-# video link
-
-<br>
-
 # Overview
 AYT is a web application which you can find information about Anime and Manga. What I meant by information is that story, characters, voice actors in Anime and also volume and chapter in Manga as well as other things that might get your attention. In this webapp, you can find every Anime and Manga that is on Anilist website since this web app is using [Anilist Api](https://anilist.gitbook.io/anilist-apiv2-docs/) to get these datas.
 
